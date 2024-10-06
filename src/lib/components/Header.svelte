@@ -25,14 +25,14 @@
 
 <header class="w-full h-[58px] p-2 flex justify-between {Color($themeColor,'text','800')}">
 	<button
-		class="flex flex-row gap-2"
+		class="w-[120px] flex flex-row gap-2"
 		on:click={() => {
 			stage.set('select');
 			setDefault()
 		}}
 	>
-		<img {src} alt="logo" />
-		<button class="flex items-center text-lg">Sudokit</button>
+		<img {src} alt="logo" class="w-full h-full" />
+		<button class="w-full h-full flex items-center text-lg">Sudokit</button>
 	</button>
 	<div class="flex items-center pr-1">
 		<button class="" on:click={() => isOpen = !isOpen}>
