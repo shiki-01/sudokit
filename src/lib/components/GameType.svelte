@@ -22,13 +22,12 @@
 	class="w-full h-full flex flex-col gap-10 justify-center items-center"
 >
 	<p>Select the Game Type</p>
-	<div class="grid grid-cols-2 gap-5">
+	<div class="grid grid-cols-2 gap-5 {Color($themeColor,'text','800')}">
 		{#each buttons as { icon, title }}
 			<button
 				class="
 					w-[125px] flex flex-row justify-center items-center gap-2 p-4 rounded-xl shadow-xl hover:shadow-2xl cursor-pointer
 					{Color($themeColor,'bg','300')}
-					{Color($themeColor,'text','800')}
 					{Color($themeColor,'shadow','400/20')}
 				"
 				on:click={() => {
