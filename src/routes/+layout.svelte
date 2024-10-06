@@ -4,6 +4,7 @@
 		import Header from '$lib/components/Header.svelte';
 		import { onMount } from 'svelte';
 		import { display, sudokuStore } from '$lib/utils/sudoku';
+		import { browser } from '$app/environment';
 
 		$: if (typeof window !== 'undefined') display(sudokuStore);
 
@@ -13,6 +14,9 @@
 			if (themeL) theme.set(themeL);
 			if (themeColorL) themeColor.set(themeColorL);
 			display(sudokuStore);
+			if (browser && 'serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+			}
 		});
 </script>
 
