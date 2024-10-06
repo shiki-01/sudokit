@@ -19,10 +19,10 @@
 <div
 	in:fly={{y: -20, opacity: 0, duration: 300}}
 	out:fly={{y: -20, opacity: 0, duration: 300}}
-	class="w-full h-full flex flex-col gap-10 justify-center items-center"
+	class="w-full h-full flex flex-col gap-10 justify-center items-center {Color($themeColor,'text','800')}"
 >
 	<p>Select the Game Type</p>
-	<div class="grid grid-cols-2 gap-5 {Color($themeColor,'text','800')}">
+	<div class="grid grid-cols-2 gap-5">
 		{#each buttons as { icon, title }}
 			<button
 				class="
