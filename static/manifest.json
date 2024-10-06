@@ -1,25 +1,15 @@
 {
-  "_version": "1.1.0",
-  "sap.app": {
-    "id": "com.sap.sudokit",
-    "applicationVersion": {
-      "version": "1.1.0"
-    },
-    "type": "application",
-    "title": "Sudokit",
-    "description": "Sudoku game"
-  },
+  "name": "Sudokit",
+  "short_name": "Sudokit",
   "start_url": "/",
-  "sap.ui": {
-    "_version": "1.1.0",
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    },
-    "technology": "GUI",
-    "icons": {
-      "icon": "sap-icon://home"
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
-  }
+  ]
 }
