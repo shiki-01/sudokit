@@ -31,7 +31,7 @@
 			setDefault()
 		}}
 	>
-		<img {src} alt="logo" class="w-full h-full" />
+		<img {src} alt="logo" class="w-[42px] h-[42px]" />
 		<button class="w-full h-full flex items-center text-lg">Sudokit</button>
 	</button>
 	<div class="flex items-center pr-1">
