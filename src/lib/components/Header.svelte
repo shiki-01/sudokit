@@ -25,7 +25,7 @@
 
 <header class="w-full h-[58px] p-2 flex justify-between {Color($themeColor,'text','800')}">
 	<button
-		class="w-[120px] flex flex-row gap-2"
+		class="w-fit flex flex-row gap-2"
 		on:click={() => {
 			stage.set('select');
 			setDefault()
