@@ -19,7 +19,7 @@
 <svelte:window on:resize={() => display(sudokuStore)} />
 
 <main
-	class="w-screen h-screen overflow-hidden {Color($themeColor,'bg','50')}"
+	class="w-[100svw] h-[100svh] overflow-hidden {Color($themeColor,'bg','50')}"
 >
 	<Header />
 	<div class="p-5 w-full h-[calc(100svh-58px)]">
