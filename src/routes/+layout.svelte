@@ -9,8 +9,9 @@
 		$: if (typeof window !== 'undefined') display(sudokuStore);
 
 		onMount(() => {
-			const themeL = localStorage.getItem('theme') as 'light' | 'dark';
-			const themeColorL = localStorage.getItem('themeColor') as ThemeColor;
+			if (typeof window === 'undefined') return;
+			const themeL = window.document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+			const themeColorL = window.getComputedStyle(window.document.documentElement).getPropertyValue('--theme-color').trim() as ThemeColor;
 			if (themeL) theme.set(themeL);
 			if (themeColorL) themeColor.set(themeColorL);
 			display(sudokuStore);

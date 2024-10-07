@@ -7,6 +7,11 @@
 
 	let isOpen = false;
 
+	const icons = [
+		{ icon: 'sun-dim', title: 'Light' },
+		{ icon: 'moon', title: 'Dark' }
+	]
+
 	const changeTheme = (theme: 'light' | 'dark') => {
 		if (typeof window === 'undefined') return;
 		$theme = theme;
@@ -72,7 +77,7 @@
 					class="w-[100px] h-8 flex flex-col justify-center items-center overflow-hidden relative"
 					on:click={() => changeTheme($theme === 'light' ? 'dark' : 'light')}
 				>
-					{#each [{ icon: 'sun-dim', title: 'Light' }, { icon: 'moon', title: 'Dark' }] as { icon, title }, i}
+					{#each icons as { icon, title }, i}
 						<button
 							class="
 								flex flex-row items-center gap-1 absolute
@@ -80,10 +85,7 @@
 								left-1/2 -translate-x-1/2 -translate-y-1/2 transition-[top] duration-300 dark:top-[calc(-2rem+50%)]
 							"
 						>
-							<Icon
-								icon={'lucide:' + icon}
-								class="w-6 h-6"
-							/>
+							<Icon icon={'lucide:' + icon} class="w-6 h-6" />
 							<button class="text-lg">{title}</button>
 						</button>
 					{/each}
@@ -99,7 +101,7 @@
 						"
 						style="transform: translateX({$theme === 'light' ? '0' : '100'}%);"
 					>
-						{#each ['sun-dim', 'moon'] as icon, i}
+						{#each icons as {icon}, i}
 							<Icon
 								icon={'lucide:' + icon}
 								class="w-5 h-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 {i === 0
