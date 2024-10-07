@@ -1,14 +1,13 @@
 <script lang="ts">
-	import Select from '$lib/components/Select.svelte';
-	import GameType from '$lib/components/GameType.svelte';
-	import Pane from '$lib/components/Pane.svelte';
+	import Selector from '$lib/components/Selector.svelte';
+	import GamePane from '$lib/components/GamePane.svelte';
 	import { stage } from '$lib/utils/stage';
 </script>
-
+    
 {#if $stage === 'select'}
-	<Select />
+    <Selector type={'level'} />
 {:else if $stage === 'gameType'}
-	<GameType />
+	<Selector type={'game'} />
 {:else}
-	<Pane />
+	<GamePane />
 {/if}

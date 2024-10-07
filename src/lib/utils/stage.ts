@@ -15,4 +15,4 @@ const stage: Writable<Stage> = writable('select');
 const level: Writable<Level> = writable('Normal');
 const game: Writable<Game> = writable('Sudoku');
 
-export { type Stage, stage, type Level, level, game, stages };
+export { type Stage, stage, type Level, level, type Game, game, stages };
