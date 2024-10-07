@@ -82,7 +82,7 @@
 							class="
 								flex flex-row items-center gap-1 absolute
 								{i === 0 ? 'top-1/2 dark:top-[calc(-2rem+50%)]' : 'top-[calc(2rem+50%)] dark:top-1/2'}
-								left-1/2 -translate-x-1/2 -translate-y-1/2 transition-[top] duration-300 dark:top-[calc(-2rem+50%)]
+								left-1/2 -translate-x-1/2 -translate-y-1/2 transition-[top] duration-300
 							"
 						>
 							<Icon icon={'lucide:' + icon} class="w-6 h-6" />

@@ -21,6 +21,12 @@
 		});
 </script>
 
+<svelte:head>
+	<title>Sudokit</title>
+	<meta name="description" content="Sudoku game" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+</svelte:head>
+
 <svelte:window on:resize={() => display(sudokuStore)} />
 
 <main
