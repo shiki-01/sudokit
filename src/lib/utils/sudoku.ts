@@ -1,25 +1,25 @@
 import { writable, type Writable } from 'svelte/store';
 
 type Sudoku = {
-	number: string,
-	display: boolean,
-	memos: string[]
-}
+	number: string;
+	display: boolean;
+	memos: string[];
+};
 
 type SudokuStore = {
-	sudoku: Sudoku[],
+	sudoku: Sudoku[];
 	solution: {
-		number: string,
-	}[],
+		number: string;
+	}[];
 	time: {
-		start: Date,
-		score: number
-	} | null,
-	selected: [number, number],
-	isMemo: boolean,
-	missing: number,
-	displaySize: number
-}
+		start: Date;
+		score: number;
+	} | null;
+	selected: [number, number];
+	isMemo: boolean;
+	missing: number;
+	displaySize: number;
+};
 
 const defaultState: SudokuStore = {
 	sudoku: [],
@@ -29,14 +29,14 @@ const defaultState: SudokuStore = {
 	isMemo: false,
 	missing: 0,
 	displaySize: 0
-}
+};
 
-const sudokuStore: Writable<SudokuStore> = writable(defaultState)
+const sudokuStore: Writable<SudokuStore> = writable(defaultState);
 
 const display = (store: Writable<SudokuStore>) => {
 	const { innerWidth, innerHeight } = window;
 	let displaySize: number = 0;
-	store.subscribe((value) => displaySize = value.displaySize);
+	store.subscribe((value) => (displaySize = value.displaySize));
 	const size = Math.min(innerWidth - 80, innerHeight - 138 - displaySize * 2 - 20 - 40 - 40);
 	store.update((value) => {
 		value.displaySize = size > 600 ? 50 : size / 9;
@@ -46,6 +46,6 @@ const display = (store: Writable<SudokuStore>) => {
 
 const setDefault = () => {
 	sudokuStore.set(defaultState);
-}
+};
 
-export { type Sudoku, sudokuStore, display, setDefault }
+export { type Sudoku, sudokuStore, display, setDefault };

@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-    * {
-        @apply select-none;
-        user-select: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-    }
+	* {
+		@apply select-none;
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+	}
 }

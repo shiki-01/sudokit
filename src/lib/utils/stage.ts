@@ -1,13 +1,8 @@
 import { type Writable, writable } from 'svelte/store';
 
-const stages = [
-	'select',
-	'gameType',
-	'play',
-	'end',
-]
+const stages = ['select', 'gameType', 'play', 'end'];
 
-type Stage = typeof stages[number];
+type Stage = (typeof stages)[number];
 type Level = 'Easy' | 'Normal' | 'Hard' | 'Master';
 type Game = 'Sudoku' | 'Killer';
 

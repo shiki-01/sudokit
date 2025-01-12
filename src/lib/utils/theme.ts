@@ -51,15 +51,10 @@ const ThemeColors: ThemeColor[] = [
 	'purple',
 	'fuchsia',
 	'pink',
-	'rose',
+	'rose'
 ];
 
-const Color = (
-	color	: ThemeColor,
-	ui: ThemeUI,
-	light: string,
-	strict: boolean = false
-): string => {
+const Color = (color: ThemeColor, ui: ThemeUI, light: string, strict: boolean = false): string => {
 	let result: string = '';
 	let lightness: ThemeLight;
 	let darkness: ThemeLight;
@@ -77,7 +72,9 @@ const Color = (
 	let property = '';
 
 	if (typeof document !== 'undefined') {
-		property = document.documentElement.style.getPropertyValue(`--theme-color`).trim() as ThemeColor;
+		property = document.documentElement.style
+			.getPropertyValue(`--theme-color`)
+			.trim() as ThemeColor;
 	}
 
 	if (property === '') {

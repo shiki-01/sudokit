@@ -2,7 +2,7 @@
 	import Icon from '@iconify/svelte';
 	import { Color, themeColor } from '$lib/utils/theme';
 
-    export let icon: string;
+	export let icon: string;
 	export let text: string;
 </script>
 

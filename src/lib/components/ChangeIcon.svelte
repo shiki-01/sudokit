@@ -10,7 +10,7 @@
 <button
 	class="
         flex justify-center items-center p-2 border border-gray-200 rounded-md relative
-        {Color($themeColor,'text','800')}
+        {Color($themeColor, 'text', '800')}
     "
 	style="width: {$sudokuStore.displaySize}px; height: {$sudokuStore.displaySize}px;"
 	on:click={() => (is = !is)}

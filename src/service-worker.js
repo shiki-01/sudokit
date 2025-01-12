@@ -4,11 +4,7 @@ const CACHE_PREFIX = 'sudokit-cache-';
 const CACHE_VERSION = '1';
 const CACHE = `${CACHE_PREFIX}${CACHE_VERSION}`;
 
-const ASSETS_TO_CACHE = [
-	'/',
-	...build,
-	...files,
-];
+const ASSETS_TO_CACHE = ['/', ...build, ...files];
 
 self.addEventListener('install', (event) => {
 	event.waitUntil(
@@ -41,20 +37,22 @@ self.addEventListener('fetch', (event) => {
 				return cachedResponse;
 			}
 
-			return fetch(event.request).then((response) => {
-				if (!response || response.status !== 200 || response.type !== 'basic') {
+			return fetch(event.request)
+				.then((response) => {
+					if (!response || response.status !== 200 || response.type !== 'basic') {
+						return response;
+					}
+
+					const responseToCache = response.clone();
+					caches.open(CACHE).then((cache) => {
+						cache.put(event.request, responseToCache).then((r) => r);
+					});
+
 					return response;
-				}
-
-				const responseToCache = response.clone();
-				caches.open(CACHE).then((cache) => {
-					cache.put(event.request, responseToCache).then(r => r);
+				})
+				.catch(() => {
+					return caches.match('/');
 				});
-
-				return response;
-			}).catch(() => {
-				return caches.match('/');
-			});
 		})
 	);
 });
